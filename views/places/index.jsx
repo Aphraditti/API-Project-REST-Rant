@@ -5,7 +5,7 @@ function Index({places}) {
     
     let placesFormatted = places?.map((place) => {
         return (
-            <div className="col-sm-6">
+            <div className="col-sm-6" key={Math.random()}>
                 <h2 className="text-center">{place.name} - {place.city}, {place.state}</h2>
                 <img src={place.pic} alt={place.name} />
             </div>

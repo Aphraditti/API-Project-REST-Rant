@@ -1,23 +1,30 @@
-require('dotenv').config()
-
+require('dotenv').config();
+const mongoose = require('mongoose')
 const express = require('express')
-const app = express()
 
-app.set('views', __dirname + '/views' )
-app.set('view engine', 'jsx')
+const app = express();
+
+const port = process.env.PORT;
+const mongoURL = process.env.MONGO_DB_URI;
+
+app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine())
-app.use(express.static('public'))
-app.use(express.urlencoded({extended: true}))
-app.use('/places', require('./controllers/places'))
+
+app.listen(port, () => {
+  console.log(`Server running on ${port}`)
+  mongoose.connect(mongoURL, {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
+  }).then(() => console.log('Connected!'));
+}
+)
 
 app.get('/', (req, res) => {
-    res.render('Home')
+  res.render('./home')
 })
 
-app.get('*', (req, res) => {
-    res.status(404).render('error404')
+app.get('/places', (req, res) => {
+  res.render('./places/index')
 })
 
-app.listen(process.env.PORT, () => {
-    console.log("listening on port", process.env.PORT)
-} )
+

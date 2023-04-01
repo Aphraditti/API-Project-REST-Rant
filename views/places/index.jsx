@@ -2,7 +2,8 @@ const React = require('react')
 const Default = require('../default')
 
 function Index(data) {
-    let placesFormatted = data.places.map((place) => {
+    console.log(data)
+    let placesFormatted = data?.places?.map((place) => {
          return (
              <div className='col-sm-4 text-center'>
                  <a href={`/places/${index}`}>

@@ -8,7 +8,7 @@ function Index(data) {
                  <a href={`/places/${index}`}>
                  {place.name}
                  </a>
-                 <a href={`${place.pic}`}>
+                 <a href={`/places/${index}`}>
                  {place.cuisines}
                  </a>
                  <h2>{place.name} - {place.city}, {place.state}</h2>

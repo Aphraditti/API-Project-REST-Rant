@@ -9,7 +9,9 @@ const mongoURL = process.env.MONGO_DB_URI;
 
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine())
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }))
+app.use('/places', require('./controllers/places'))
 
 app.listen(port, () => {
   console.log(`Server running on ${port}`)
@@ -21,14 +23,10 @@ app.listen(port, () => {
 )
 
 app.get('/', (req, res) => {
-  res.render('./home')
+  res.render('home')
 })
 
-app.get('/places', (req, res) => {
-  res.render('./places/index')
+app.get('*', (req, res) => {
+  res.render('error404')
 })
-app.get('/places/new', (req, res) => {
-  res.render('./places/new')
-})
-
 

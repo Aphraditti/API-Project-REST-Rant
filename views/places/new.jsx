@@ -1,8 +1,8 @@
 const React = require('react')
-const Default = require('../default')
+const Def = require('../default')
 function New() {
     return (
-        <Default>
+        <Def>
             <main>
                  <h1>Add a New Place</h1>
                  <br/>
@@ -16,16 +16,6 @@ function New() {
                              type="text"
                              required />
                      </div>
-                     <div className='row' />
-                         <div className="form-group col-sm-6">
-                             <label htmlFor="name">Name</label>
-                             <input
-                                 className="form-control" 
-                                 id="name" 
-                                 name="name" 
-                                 type="text"
-                                 required />
-                         </div>
 
                      <div className="form-group">
                          <label htmlFor="pic">Picture</label>
@@ -35,15 +25,6 @@ function New() {
                              name="pic" 
                              type="url" />
                      </div>
-                         <div className="form-group col-sm-6">
-                             <label htmlFor="pic">Picture</label>
-                             <input
-                                 className="form-control" 
-                                 id="pic" 
-                                 name="pic" 
-                                 type="url" />
-                         </div>
-
                      <div className="form-group">
                          <label htmlFor="city">City</label>
                          <input
@@ -52,14 +33,6 @@ function New() {
                              name="city" 
                              type="text" />
                      </div>
-                         <div className="form-group col-sm-6">
-                             <label htmlFor="city">City</label>
-                             <input
-                                 className="form-control" 
-                                 id="city" 
-                                 name="city" 
-                                 type="text" />
-                         </div>
 
                      <div className="form-group">
                          <label htmlFor="state">State</label>
@@ -69,14 +42,6 @@ function New() {
                              name="state" 
                              type="text" />
                      </div>
-                         <div className="form-group col-sm-6">
-                             <label htmlFor="state">State</label>
-                             <input
-                                 className="form-control" 
-                                 id="state" 
-                                 name="state" 
-                                 type="text" />
-                         </div>
 
                      <div className="form-group">
                          <label htmlFor="cuisines">Cuisines</label>
@@ -86,34 +51,24 @@ function New() {
                              name="cuisines" 
                              type="text" 
                              required />
-                         <div className="form-group col-sm-6">
-                             <label htmlFor="cuisines">Cuisines</label>
-                             <input
-                                 className="form-control" 
-                                 id="cuisines" 
-                                 name="cuisines" 
-                                 type="text" 
-                                 required />
-                         </div>
-                         <br/>
                      </div>
                      <br/>
                      <input className="btn btn-primary" type="submit" value="Add Place" />
                  </form>
              </main>
-        </Default>
+        </Def>
     )
 }
 module.exports = New
 
 
 // const React = require('react')
-// const Default = require('../default')
+// const Def = require('../default')
 
 
 // function New() {
 //     return (
-//         <Default>
+//         <Def>
 //             <main>
 //                  <h1>Add a New Place</h1>
 //                  <br/>
@@ -213,7 +168,7 @@ module.exports = New
 //                      <input className="btn btn-primary" type="submit" value="Add Place" />
 //                  </form>
 //              </main>
-//         </Default>
+//         </Def>
 //     )
 // }
 // module.exports = New

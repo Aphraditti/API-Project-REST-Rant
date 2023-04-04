@@ -6,7 +6,7 @@ const methodOverride = require('method-override')
 const app = express();
 
 const port = process.env.PORT;
-const mongoURL = process.env.MONGO_DB_URI;
+const mongoURL = process.env.MONGO_URI;
 
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine())

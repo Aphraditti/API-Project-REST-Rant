@@ -6,7 +6,16 @@ const React = require('react')
      return (
          <Default>
            <main>
-             <h1>{data.place.name}</h1>
+            <div class="row">
+              <div className="col-sm-6">
+                <img src={data.place.pic} alt={data.place.name} />
+                <h3>
+                  Located in {data.place.city}, {data.place.state}
+                </h3>
+              </div>
+
+              <div className="col-sm-6">
+                  <h1>{data.place.name}</h1>
 
              <div>
                  <h3>Ratings</h3>
@@ -22,7 +31,6 @@ const React = require('react')
                  <h4>Comments</h4>
                  <p>No comments yet!</p>
              </div>
-            <img src={data.place.pic} alt="not available" />
             
              <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">Edit</a>  
 
@@ -30,12 +38,12 @@ const React = require('react')
                  <button type="submit" className="btn btn-danger">
                      Delete
                  </button>
-             </form>     
+             </form>  
+              </div>
+            </div>   
            </main>
          </Default>
      )
  }
 
  module.exports = Show
-
-

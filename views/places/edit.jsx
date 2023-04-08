@@ -60,6 +60,16 @@ function EditForm (data) {
                              value={data.place.cuisines}
                              />
                      </div>
+
+                    <div className="form-group col-sm-4">
+                        <label htmlFor="founded">Founded</label>
+                        <input className="form-control"
+                            id="founded"
+                            name="founded"
+                            value={data.place.founded}
+                        />
+                    </div>
+
                      <br/>
                      <input className="btn btn-primary" type="submit" value="Add Place" />
                  </form>

@@ -7,7 +7,26 @@ const React = require('react')
         No comments yet!
       </p>
     )
+    let rating = (
+      <p className="inactive">
+          Not yet rated
+      </p>
+    )
+   
     if (data.place.comments.length) {
+      let sumRatings = data.place.comments.reduce((tot, c) => {
+        return tot + c.stars
+      }, 0)
+      let averageRating = Math.round(sumRatings / data.place.comments.length)
+      let stars = ''
+      for (let i = 0; i < averageRating; i++) {
+        stars += '⭐'
+      }
+      rating = (
+        <h3>
+          {stars} stars
+        </h3>
+      )
       comments = data.place.comments.map(c => {
         return (
           <div className="border" key={c.id}>
@@ -26,7 +45,7 @@ const React = require('react')
            <main>
             <div class="row">
               <div className="col-sm-6">
-                <img src={data.place.pic} alt={data.place.name} />
+                <img src={data.place.pic} alt={data.place.name} className='max-350'/>
                 <h3>
                   Located in {data.place.city}, {data.place.state}
                 </h3>
@@ -36,8 +55,8 @@ const React = require('react')
                   <h1>{data.place.name}</h1>
 
              <div>
-                 <h3>Ratings</h3>
-                 <p>Not Rated</p>
+                 <h3>Rating</h3>
+                  {rating}
              </div>
 
              <div>
@@ -110,4 +129,4 @@ const React = require('react')
  module.exports = Show
 
 
-  
+

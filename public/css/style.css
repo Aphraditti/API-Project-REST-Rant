@@ -41,3 +41,19 @@ nav a {
 nav a:hover {
     color: pink;
 }
+
+/* #index-places {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+} */
+
+.index-img, .max-350 {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.index-place {
+
+}
